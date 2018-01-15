@@ -1,0 +1,79 @@
+page-login {
+  // Overwrite ionic elements for page-login
+  ion-content {
+    background-color: #127C77 !important;
+    background-image: linear-gradient(#127C77 0%, #275C5E 35% , #424242 100%) !important;
+  }
+
+  ion-grid {
+    height: 100%;
+    padding: 0;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .item-ios, .item-wp, .item-md {
+    color: rgba(255, 255, 255, 0.72);
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+
+    &.item-block {
+
+      .item-inner {
+        border-bottom: 0;
+      }
+
+    }
+
+    ion-icon[item-left] + .item-inner,
+    ion-icon[item-left] + .item-input,
+    ion-icon[item-start] + .item-inner,
+    ion-icon[item-start] + .item-input {
+      margin-left: 0;
+    }
+
+  }
+
+  .text-input {
+    color: #fff;
+
+    &::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+  }
+
+  @media (min-width: #{map-get($grid-breakpoints, 'md')}) {
+    ion-grid {
+      justify-content: center !important;
+    }
+  }
+
+  // Styling for page specific elements
+  // Schema: .page-login__{element}
+  .#{&} {
+    &__logo {
+      width: 100%;
+      height: auto;
+    }
+
+    &__submit {
+      display: inline-block;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    }
+
+    @media (min-width: #{map-get($grid-breakpoints, 'md')}) {
+      &__logo {
+        margin-bottom: 3vh;
+      }
+
+      &__submit {
+        margin-top: 3vh;
+        margin-bottom: 5vh;
+      }
+    }
+  }
+
+}

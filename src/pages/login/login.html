@@ -1,0 +1,40 @@
+<ion-content>
+
+  <ion-grid justify-content-around>
+    <ion-row justify-content-center>
+      <ion-col col-2 col-lg-1>
+        <img class="page-login__logo" src="./assets/imgs/logo.svg" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col col-8 col-md-6 col-lg-4>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+              <ion-icon ios="md-person" md="md-person" item-start></ion-icon>
+              <ion-input type="text" placeholder="E-Mail"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item col-12>
+              <ion-icon ios="md-lock" md="md-lock" item-start></ion-icon>
+              <ion-input type="text" placeholder="Passwort"></ion-input>
+              <ion-icon ios="md-eye" md="md-eye" item-end></ion-icon>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col class="text-center" col-5 col-md-6 col-lg-4>
+        <button class="page-login__submit" ion-button block [button-effect]="loginStatus" (click)="goToPage()">
+          <span *ngIf="loginStatus!=='isprocessing'">Login</span>
+          <ion-spinner name="circles" *ngIf="loginStatus==='isprocessing'"></ion-spinner>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

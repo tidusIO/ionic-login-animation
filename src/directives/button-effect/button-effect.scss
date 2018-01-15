@@ -1,0 +1,50 @@
+.button-effect-directive {
+  transition: border-radius 0.3s 0.15s, width 0.3s 0.15s, height 0.3s 0.15s, font-size 0.1s 0.15s;
+
+  .button-effect {
+    display: none;
+  }
+
+  &--processing {
+    font-size: 0 !important;
+    width: $fab-size;
+    height: $fab-size;
+    border-radius: 50%;
+    box-shadow: none !important;
+
+    &:after {
+      opacity: 1;
+      animation: rotate 0.5s 0.4s infinite linear;
+    }
+
+    ion-spinner {
+      * {
+        stroke: #fff !important;
+      }
+
+      &.spinner-circles circle,
+      &.spinner-bubbles circle,
+      &.spinner-dots circle {
+        fill: #fff;
+      }
+    }
+  }
+
+  &--successful {
+    transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s;
+    transform: scale(60);
+    opacity: 1;
+
+    &:after {
+      transition: opacity 0.1s 0s;
+      opacity: 0;
+      animation: none;
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
